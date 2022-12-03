@@ -1,0 +1,15 @@
+[Unit]
+Description=It is a web app
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/nlin/.volta/bin/node /home/nlin/2420_ass2/index.js
+User=nlin
+Restart=always
+RestartSec=15
+TimeoutStopSec=60
+SyslogIdentifier=hello_web
+
+[Install]
+WantedBy=multi-user.target
